@@ -3,38 +3,332 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danke für Ihr Interesse</title>
+  <title>GutTun – Danke für Ihr Interesse</title>
   <style>
+    :root {
+      --bg: #f8f1ea;
+      --card: #ffffff;
+      --text: #0e1a2b;
+      --muted: #68707c;
+      --accent: #ff6f52;
+      --accent-dark: #ef6246;
+      --accent-soft: #ffe3db;
+      --line: #ecdcd1;
+      --shadow: 0 18px 40px rgba(255, 111, 82, 0.16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    .card {
-      background: white;
-      max-width: 700px;
+    .page {
+      min-height: 100vh;
+      padding: 28px 18px 36px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-shell {
       width: 100%;
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
+      max-width: 430px;
+    }
+
+    .hero {
+      padding: 18px 6px 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: var(--radius-pill);
+      background: #fff6f2;
+      border: 1.5px solid #ffd3c7;
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
     }
 
     h1 {
-      margin-top: 0;
-      font-size: 2rem;
+      margin: 0 0 12px;
+      font-size: 3rem;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
     }
 
-    p {
-      font-size: 1.1rem;
+    .subtitle {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.45;
+      color: var(--muted);
+      max-width: 18ch;
+    }
+
+    .card {
+      margin-top: 26px;
+      background: linear-gradient(180deg, #ff7d62 0%, #ff6f52 100%);
+      border-radius: 38px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.88);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .points {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.18);
+      color: white;
+      padding: 10px 16px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .emoji {
+      font-size: 4.4rem;
+      text-align: center;
+      margin: 28px 0 30px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
+    }
+
+    .interest-banner {
+      background: rgba(89, 44, 11, 0.72);
+      color: #fff;
+      border-radius: var(--radius-pill);
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    .info-panel {
+      background: var(--card);
+      margin-top: -2px;
+      border-radius: 0 0 34px 34px;
+      padding: 28px 22px 24px;
+      box-shadow: 0 16px 30px rgba(22, 17, 12, 0.06);
+    }
+
+    .info-panel h2 {
+      margin: 0 0 14px;
+      font-size: 2rem;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .info-panel p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.06rem;
       line-height: 1.6;
+    }
+
+    .data-box {
+      margin: 22px 0 18px;
+      padding: 18px;
+      background: #fff8f5;
+      border: 1px solid #f4d7ca;
+      border-radius: 24px;
+    }
+
+    .data-box strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: var(--radius-pill);
+      background: #fff;
+      border: 1.5px solid var(--line);
+      color: #3b4450;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .chip.active {
+      border-color: #ff8d75;
+      color: var(--accent-dark);
+      background: #fff4ef;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 18px 22px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(255, 111, 82, 0.26);
+    }
+
+    .cta:hover {
+      background: var(--accent-dark);
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-top: 18px;
+      padding: 0 8px;
+    }
+
+    .mini-nav {
+      margin-top: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(236,220,209,0.9);
+      border-radius: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 12px 10px;
+      text-align: center;
+      color: #707887;
+      font-size: 0.82rem;
+    }
+
+    .mini-nav div {
+      padding: 6px 4px;
+    }
+
+    .mini-nav .active {
+      color: var(--accent-dark);
+      font-weight: 700;
+      background: #ffe8e0;
+      border-radius: 18px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .subtitle {
+        max-width: none;
+        font-size: 1.08rem;
+      }
+
+      .info-panel h2 {
+        font-size: 1.7rem;
+      }
+
+      .cta {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="phone-shell">
+      <section class="hero">
+        <div class="eyebrow">✨ GutTun Vorschau</div>
+        <h1>Danke für Ihr Interesse</h1>
+        <p class="subtitle">
+          Eine kleine Beispielseite im Stil unseres App-Prototyps.
+        </p>
+
+        <div class="card">
+          <div class="pill-row">
+            <div class="pill">🤝 Soziales & Nachbarschaft</div>
+            <div class="points">❤ Interesse</div>
+          </div>
+
+          <div class="emoji">📱</div>
+
+          <div class="interest-banner">Passt zu unserem Projekt an der Universität</div>
+        </div>
+
+        <section class="info-panel">
+          <h2>Die App ist noch nicht offiziell verfügbar</h2>
+          <p>
+            Wir sammeln aktuell zunächst nur anonym, wie viele Personen grundsätzlich Interesse an einem späteren Download der App hätten.
+          </p>
+          <p>
+            Diese Seite dient ausschließlich als Beispiel-Landingpage im Rahmen unseres Seminarprojekts.
+          </p>
+
+          <div class="data-box">
+            <strong>Was wird aktuell erfasst?</strong>
+            Nur anonyme Seitenaufrufe oder spätere Klicks auf den Interesse-Button, keine Registrierung und keine personenbezogenen Daten.
+          </div>
+
+          <div class="chips">
+            <span class="chip active">Umwelt & Natur</span>
+            <span class="chip active">Soziales & Nachbarschaft</span>
+            <span class="chip">Kalender</span>
+            <span class="chip">Belohnungen</span>
+          </div>
+
+          <a class="cta" href="#">Ich hätte Interesse an der App</a>
+
+          <p class="footer-note">
+            Vielen Dank für Ihre Unterstützung und Ihr Interesse an unserem Konzept.
+          </p>
+        </section>
+
+        <div class="mini-nav">
+          <div>Entdecken</div>
+          <div>Kalender</div>
+          <div>Belohnungen</div>
+          <div class="active">Interesse</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>      line-height: 1.6;
     }
 
     .note {
