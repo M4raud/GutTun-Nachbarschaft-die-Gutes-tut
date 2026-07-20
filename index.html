@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GutTun – Danke für Ihr Interesse</title>
+  <title>GutTun – Vorschau</title>
   <style>
     :root {
       --bg: #f8f1ea;
-      --card: #ffffff;
-      --text: #0e1a2b;
-      --muted: #68707c;
+      --text: #0f1b2d;
+      --muted: #6c7685;
       --accent: #ff6f52;
       --accent-dark: #ef6246;
-      --accent-soft: #ffe3db;
-      --line: #ecdcd1;
-      --shadow: 0 18px 40px rgba(255, 111, 82, 0.16);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-pill: 999px;
+      --accent-soft: #ffe5dc;
+      --white: #ffffff;
+      --shadow-soft: 0 18px 45px rgba(255, 111, 82, 0.14);
+      --shadow-card: 0 14px 34px rgba(20, 18, 14, 0.07);
+      --pill: 999px;
     }
 
     * {
@@ -29,64 +27,49 @@
       font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      min-height: 100vh;
     }
 
     .page {
       min-height: 100vh;
-      padding: 28px 18px 36px;
       display: flex;
       justify-content: center;
+      padding: 28px 18px 40px;
     }
 
-    .phone-shell {
+    .screen {
       width: 100%;
       max-width: 430px;
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 68px);
     }
 
-    .hero {
-      padding: 18px 6px 22px;
-    }
-
-    .eyebrow {
+    .top-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      align-self: flex-start;
       padding: 10px 16px;
-      border-radius: var(--radius-pill);
-      background: #fff6f2;
-      border: 1.5px solid #ffd3c7;
+      border-radius: var(--pill);
+      background: var(--white);
+      border: 1.5px solid #f1d8cd;
       color: var(--accent-dark);
       font-weight: 700;
       font-size: 0.95rem;
-      margin-bottom: 18px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      margin-bottom: 28px;
     }
 
-    h1 {
-      margin: 0 0 12px;
-      font-size: 3rem;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .subtitle {
-      margin: 0;
-      font-size: 1.25rem;
-      line-height: 1.45;
-      color: var(--muted);
-      max-width: 18ch;
-    }
-
-    .card {
-      margin-top: 26px;
-      background: linear-gradient(180deg, #ff7d62 0%, #ff6f52 100%);
+    .hero-card {
+      background: linear-gradient(180deg, #ff8167 0%, #ff6f52 100%);
       border-radius: 38px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
+      padding: 22px 22px 26px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 22px;
     }
 
-    .pill-row {
+    .hero-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -94,176 +77,125 @@
       margin-bottom: 22px;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.88);
-      color: var(--text);
-      padding: 10px 16px;
-      border-radius: var(--radius-pill);
+    .hero-pill,
+    .hero-heart {
+      border-radius: var(--pill);
+      padding: 10px 15px;
       font-weight: 700;
       font-size: 0.95rem;
     }
 
-    .points {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .hero-pill {
+      background: rgba(255,255,255,0.88);
+      color: var(--text);
+    }
+
+    .hero-heart {
       background: rgba(255,255,255,0.18);
       color: white;
-      padding: 10px 16px;
-      border-radius: var(--radius-pill);
-      font-weight: 700;
-      font-size: 1rem;
-      backdrop-filter: blur(4px);
     }
 
-    .emoji {
-      font-size: 4.4rem;
-      text-align: center;
-      margin: 28px 0 30px;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
+    .icon-box {
+      width: 120px;
+      height: 120px;
+      margin: 18px auto 22px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, #ff8e74 0%, #ff7b60 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.6rem;
+      color: white;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
     }
 
-    .interest-banner {
+    .hero-note {
       background: rgba(89, 44, 11, 0.72);
-      color: #fff;
-      border-radius: var(--radius-pill);
+      color: white;
+      border-radius: var(--pill);
       padding: 14px 18px;
       font-weight: 700;
       font-size: 1rem;
-      margin-bottom: 0;
+      text-align: center;
     }
 
-    .info-panel {
-      background: var(--card);
-      margin-top: -2px;
-      border-radius: 0 0 34px 34px;
-      padding: 28px 22px 24px;
-      box-shadow: 0 16px 30px rgba(22, 17, 12, 0.06);
+    .content-card {
+      background: var(--white);
+      border-radius: 34px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-card);
     }
 
-    .info-panel h2 {
+    h1 {
       margin: 0 0 14px;
-      font-size: 2rem;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: 2.45rem;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
     }
 
-    .info-panel p {
-      margin: 0 0 14px;
+    .lead {
+      margin: 0 0 12px;
       color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.6;
+      font-size: 1.12rem;
+      line-height: 1.55;
     }
 
-    .data-box {
-      margin: 22px 0 18px;
-      padding: 18px;
-      background: #fff8f5;
-      border: 1px solid #f4d7ca;
+    .info {
+      margin-top: 18px;
+      background: #fff7f3;
+      border: 1px solid #f3d7cb;
       border-radius: 24px;
+      padding: 18px;
+      color: #495260;
+      font-size: 0.98rem;
+      line-height: 1.55;
     }
 
-    .data-box strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: var(--text);
+    .button-wrap {
+      margin-top: auto;
+      padding-top: 26px;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 24px;
-    }
-
-    .chip {
-      padding: 10px 14px;
-      border-radius: var(--radius-pill);
-      background: #fff;
-      border: 1.5px solid var(--line);
-      color: #3b4450;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .chip.active {
-      border-color: #ff8d75;
-      color: var(--accent-dark);
-      background: #fff4ef;
-    }
-
-    .cta {
-      display: block;
+    button {
       width: 100%;
-      border: 0;
-      border-radius: var(--radius-pill);
+      border: none;
+      border-radius: var(--pill);
       background: var(--accent);
-      color: #fff;
+      color: white;
       font-size: 1.3rem;
       font-weight: 700;
-      padding: 18px 22px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 10px 24px rgba(255, 111, 82, 0.26);
+      padding: 19px 22px;
+      box-shadow: 0 12px 28px rgba(255, 111, 82, 0.24);
     }
 
-    .cta:hover {
+    button:hover {
       background: var(--accent-dark);
+      cursor: pointer;
     }
 
-    .footer-note {
+    .small-note {
       text-align: center;
       color: var(--muted);
       font-size: 0.92rem;
       line-height: 1.5;
-      margin-top: 18px;
-      padding: 0 8px;
-    }
-
-    .mini-nav {
-      margin-top: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(236,220,209,0.9);
-      border-radius: 28px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      padding: 12px 10px;
-      text-align: center;
-      color: #707887;
-      font-size: 0.82rem;
-    }
-
-    .mini-nav div {
-      padding: 6px 4px;
-    }
-
-    .mini-nav .active {
-      color: var(--accent-dark);
-      font-weight: 700;
-      background: #ffe8e0;
-      border-radius: 18px;
+      margin-top: 16px;
+      padding: 0 10px;
     }
 
     @media (max-width: 480px) {
+      .screen {
+        min-height: auto;
+      }
+
       h1 {
-        font-size: 2.35rem;
+        font-size: 2.05rem;
       }
 
-      .subtitle {
-        max-width: none;
-        font-size: 1.08rem;
+      .lead {
+        font-size: 1.03rem;
       }
 
-      .info-panel h2 {
-        font-size: 1.7rem;
-      }
-
-      .cta {
+      button {
         font-size: 1.15rem;
       }
     }
@@ -271,101 +203,41 @@
 </head>
 <body>
   <div class="page">
-    <main class="phone-shell">
-      <section class="hero">
-        <div class="eyebrow">✨ GutTun Vorschau</div>
-        <h1>Danke für Ihr Interesse</h1>
-        <p class="subtitle">
-          Eine kleine Beispielseite im Stil unseres App-Prototyps.
+    <main class="screen">
+      <div class="top-badge">✨ GutTun Vorschau</div>
+
+      <section class="hero-card">
+        <div class="hero-row">
+          <div class="hero-pill">🤝 Soziales & Nachbarschaft</div>
+          <div class="hero-heart">❤ Interesse</div>
+        </div>
+
+        <div class="icon-box">📱</div>
+
+        <div class="hero-note">Universitätsprojekt · Beispiel-Landingpage</div>
+      </section>
+
+      <section class="content-card">
+        <h1>GutTun kommt bald</h1>
+        <p class="lead">
+          Vielen Dank für Ihr Interesse an unserem App-Konzept.
+        </p>
+        <p class="lead">
+          Aktuell gibt es noch keine offizielle App. Wir sammeln zunächst nur anonym, wie viele Personen grundsätzlich an einem späteren Download interessiert wären.
         </p>
 
-        <div class="card">
-          <div class="pill-row">
-            <div class="pill">🤝 Soziales & Nachbarschaft</div>
-            <div class="points">❤ Interesse</div>
-          </div>
-
-          <div class="emoji">📱</div>
-
-          <div class="interest-banner">Passt zu unserem Projekt an der Universität</div>
-        </div>
-
-        <section class="info-panel">
-          <h2>Die App ist noch nicht offiziell verfügbar</h2>
-          <p>
-            Wir sammeln aktuell zunächst nur anonym, wie viele Personen grundsätzlich Interesse an einem späteren Download der App hätten.
-          </p>
-          <p>
-            Diese Seite dient ausschließlich als Beispiel-Landingpage im Rahmen unseres Seminarprojekts.
-          </p>
-
-          <div class="data-box">
-            <strong>Was wird aktuell erfasst?</strong>
-            Nur anonyme Seitenaufrufe oder spätere Klicks auf den Interesse-Button, keine Registrierung und keine personenbezogenen Daten.
-          </div>
-
-          <div class="chips">
-            <span class="chip active">Umwelt & Natur</span>
-            <span class="chip active">Soziales & Nachbarschaft</span>
-            <span class="chip">Kalender</span>
-            <span class="chip">Belohnungen</span>
-          </div>
-
-          <a class="cta" href="#">Ich hätte Interesse an der App</a>
-
-          <p class="footer-note">
-            Vielen Dank für Ihre Unterstützung und Ihr Interesse an unserem Konzept.
-          </p>
-        </section>
-
-        <div class="mini-nav">
-          <div>Entdecken</div>
-          <div>Kalender</div>
-          <div>Belohnungen</div>
-          <div class="active">Interesse</div>
+        <div class="info">
+          Es werden keine personenbezogenen Daten erhoben. Diese Seite dient ausschließlich als Vorschau im Rahmen eines Seminarprojekts.
         </div>
       </section>
+
+      <div class="button-wrap">
+        <button type="button">Ich hätte Interesse an der App</button>
+        <div class="small-note">
+          Mit dem Button können wir später anonyme Interessen-Klicks zählen.
+        </div>
+      </div>
     </main>
   </div>
-</body>
-</html>      line-height: 1.6;
-    }
-
-    .note {
-      margin-top: 24px;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 14px 22px;
-      border-radius: 10px;
-      background: #1f6feb;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background: #1558b0;
-    }
-  </style>
-</head>
-<body>
-  <main class="card">
-    <h1>Danke für Ihr Interesse</h1>
-    <p>
-      Bisher gibt es noch keine offizielle App.
-    </p>
-    <p>
-      Wir sammeln aktuell nur anonym, wie viele Personen grundsätzlich Interesse an einem Download hätten.
-    </p>
-    <a class="button" href="#">Ich hätte Interesse an der App</a>
-    <p class="note">
-      Es werden keine personenbezogenen Daten erhoben. Der aktuelle Stand dient nur als Beispielseite im Rahmen eines Universitätsprojekts.
-    </p>
-  </main>
 </body>
 </html>
