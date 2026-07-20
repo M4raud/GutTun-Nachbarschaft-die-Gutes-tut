@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Danke für Ihr Interesse</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .card {
+      background: white;
+      max-width: 700px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .note {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 22px;
+      border-radius: 10px;
+      background: #1f6feb;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #1558b0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Danke für Ihr Interesse</h1>
-  <p>Bisher gibt es noch keine offizielle App.</p>
-  <p>Wir sammeln aktuell nur anonym, wie viele Personen grundsätzlich Interesse an einem Download hätten.</p>
+  <main class="card">
+    <h1>Danke für Ihr Interesse</h1>
+    <p>
+      Bisher gibt es noch keine offizielle App.
+    </p>
+    <p>
+      Wir sammeln aktuell nur anonym, wie viele Personen grundsätzlich Interesse an einem Download hätten.
+    </p>
+    <a class="button" href="#">Ich hätte Interesse an der App</a>
+    <p class="note">
+      Es werden keine personenbezogenen Daten erhoben. Der aktuelle Stand dient nur als Beispielseite im Rahmen eines Universitätsprojekts.
+    </p>
+  </main>
 </body>
 </html>
