@@ -156,21 +156,22 @@
       padding-top: 26px;
     }
 
-    button {
+    .cta {
+      display: block;
       width: 100%;
-      border: none;
       border-radius: var(--pill);
       background: var(--accent);
       color: white;
       font-size: 1.3rem;
       font-weight: 700;
       padding: 19px 22px;
+      text-align: center;
+      text-decoration: none;
       box-shadow: 0 12px 28px rgba(255, 111, 82, 0.24);
     }
 
-    button:hover {
+    .cta:hover {
       background: var(--accent-dark);
-      cursor: pointer;
     }
 
     .small-note {
@@ -195,7 +196,7 @@
         font-size: 1.03rem;
       }
 
-      button {
+      .cta {
         font-size: 1.15rem;
       }
     }
@@ -232,9 +233,9 @@
       </section>
 
       <div class="button-wrap">
-        <button type="button">Ich hätte Interesse an der App</button>
+        <a class="cta" href="danke.html">Ich hätte Interesse an der App</a>
         <div class="small-note">
-          Mit dem Button können wir später anonyme Interessen-Klicks zählen.
+          Nach dem Klick gelangst du auf eine kurze Dankeseite.
         </div>
       </div>
     </main>
