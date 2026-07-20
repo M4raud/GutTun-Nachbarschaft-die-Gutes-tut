@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GutTun – Danke</title>
+  <style>
+    :root {
+      --bg: #f8f1ea;
+      --text: #0f1b2d;
+      --muted: #6c7685;
+      --accent: #ff6f52;
+      --accent-dark: #ef6246;
+      --white: #ffffff;
+      --shadow-soft: 0 18px 45px rgba(255, 111, 82, 0.14);
+      --shadow-card: 0 14px 34px rgba(20, 18, 14, 0.07);
+      --pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 28px 18px 40px;
+    }
+
+    .screen {
+      width: 100%;
+      max-width: 430px;
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 68px);
+    }
+
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 10px 16px;
+      border-radius: var(--pill);
+      background: var(--white);
+      border: 1.5px solid #f1d8cd;
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #ff8167 0%, #ff6f52 100%);
+      border-radius: 38px;
+      padding: 24px 22px 28px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--pill);
+      padding: 10px 15px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.88);
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .icon-box {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 22px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, #ff8e74 0%, #ff7b60 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.6rem;
+      color: white;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    }
+
+    .hero-note {
+      background: rgba(89, 44, 11, 0.72);
+      color: white;
+      border-radius: var(--pill);
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .content-card {
+      background: var(--white);
+      border-radius: 34px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 2.35rem;
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+
+    .info {
+      margin-top: 18px;
+      background: #fff7f3;
+      border: 1px solid #f3d7cb;
+      border-radius: 24px;
+      padding: 18px;
+      color: #495260;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .button-wrap {
+      margin-top: auto;
+      padding-top: 26px;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: var(--pill);
+      background: var(--accent);
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 19px 22px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(255, 111, 82, 0.24);
+    }
+
+    .cta:hover {
+      background: var(--accent-dark);
+    }
+
+    .small-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-top: 16px;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 480px) {
+      .screen {
+        min-height: auto;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1.02rem;
+      }
+
+      .cta {
+        font-size: 1.12rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="screen">
+      <div class="top-badge">❤ Vielen Dank</div>
+
+      <section class="hero-card">
+        <div class="hero-pill">GutTun · App-Vorschau</div>
+        <div class="icon-box">🎉</div>
+        <div class="hero-note">Dein Interesse wurde erfolgreich weitergeleitet</div>
+      </section>
+
+      <section class="content-card">
+        <h1>Vielen lieben Dank für dein Interesse</h1>
+        <p class="lead">
+          Es freut uns sehr, dass du unser App-Konzept spannend findest.
+        </p>
+        <p class="lead">
+          Die offizielle App ist aktuell noch nicht verfügbar und befindet sich derzeit noch in der Konzept- bzw. Projektphase.
+        </p>
+        <p class="lead">
+          Mit deinem Klick hilfst du uns dabei, besser einzuschätzen, wie groß das Interesse an einer späteren Veröffentlichung ist.
+        </p>
+
+        <div class="info">
+          Diese Seite ist Teil eines Universitätsprojekts. Es werden derzeit keine personenbezogenen Daten erhoben und noch keine App-Downloads angeboten.
+        </div>
+      </section>
+
+      <div class="button-wrap">
+        <a class="cta" href="index.html">Zurück zur Startseite</a>
+        <div class="small-note">
+          GutTun kommt bald.
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
